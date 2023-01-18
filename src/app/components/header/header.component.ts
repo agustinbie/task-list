@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   title:string = 'My Task List'
+
+  toggleAddTask(){
+    console.log("toggleAddTask!");//no funciona este console log en la consola de chrome, o al menos no me lo muestra
+  }
 }
