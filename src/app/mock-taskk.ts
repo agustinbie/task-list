@@ -9,7 +9,7 @@ export const TASKS: Task[] = [
     },
     {
         id:2,
-        text: "HAcer las compras",
+        text: "Hacer las compras",
         day: 'Agosto 5 a las 16:00',
         reminder: true
     },
