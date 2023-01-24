@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http'//importamos el modulo para poder acceder desde el componente
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -15,10 +16,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';//importamo
     ButtonComponent,
     TasksComponent,
     TasksItemsComponent
+    
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
