@@ -1,4 +1,4 @@
-<form class="add-form" (ngSubmit)="onSubmit()">
+<form class="add-form" (ngSubmit)="onSubmit()" *ngIf="showAddTask"><!--este ngIf lo que hace es mostrar el formulario cuando el showAddTask sea true, pero falta implementar que el formulario se cierre cuando se apriete el boton de submit-->
     <div class="form-control">
         <label for="text">Task</label>
         <input type="text" name="text" id="text" placeholder="Add Task Text" [(ngModel)]="text">

@@ -1,14 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {UiService} from 'src/app/service/ui.service';
+import { Subscription } from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
-  title:string = 'My Task List'
+export class HeaderComponent implements OnInit {
+  title:string = 'My Task List';
+  showAddTask: boolean = false;
+  subscription?: Subscription;
+
+  constructor(private uiService:UiService, private router: Router){
+    this.subscription = this.uiService.onToggle().subscribe(value => this.showAddTask = value)
+  }
+
+  ngOnInit(): void{
+  
+  }
 
   toggleAddTask(){
-    console.log("toggleAddTask!");//no funciona este console log en la consola de chrome, o al menos no me lo muestra
+    //console.log("click header")
+    this.uiService.toggleAddTask();
+  }
+
+  hasRoute(route: string){
+    return this.router.url === route
   }
 }

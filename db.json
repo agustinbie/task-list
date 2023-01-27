@@ -16,13 +16,13 @@
       "id": 3,
       "text": "Investigar sobre Boostrap",
       "day": "Agosto 5 a las 19:00",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 4,
       "text": "Leer un libro de bolsa",
       "day": "Agosto 6 a las 19:00",
-      "reminder": false
+      "reminder": true
     },
     {
       "text": "nueva tarea",

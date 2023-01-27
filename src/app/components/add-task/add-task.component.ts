@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {UiService} from 'src/app/service/ui.service';
+import { Subscription } from 'rxjs';
 import {Task} from '../../Task'
 
 @Component({
@@ -11,8 +13,17 @@ export class AddTaskComponent implements OnInit{
   text:string ="";
   day:string ="";
   reminder:boolean =false;
+  showAddTask: boolean =false; 
+  subscription?: Subscription;
 
-  constructor(){}
+  constructor(
+    private uiService: UiService
+  ){
+    this.subscription = this.uiService.onToggle().subscribe(value => this.showAddTask = value) //con esto escucha el valor de showAddTask pero solo lo usa en el template para 
+                                                                                                  //mostrar o no el formulario
+  }
+
+
   ngOnInit():void{}
 
   onSubmit(){

@@ -1,4 +1,8 @@
 <header>
     <h1>{{title}}</h1>
-    <app-button color="green" text="Add Task"></app-button>
-</header>
+    <app-button 
+    color="{{showAddTask ? 'red' : 'green'}}"
+    text="{{showAddTask ? 'Cancel Task' : 'Add Task'}}"
+    (btnClick)="toggleAddTask()"
+    *ngIf="hasRoute('/')"></app-button><!--este btnClick no está llamando al header.component.ts y por ende no llega a ejecutarse la funcion en el ui.service-->
+</header><!--el ngIf es para mostrar el app button component solo si la ruta es home, para que si nos vamos a la ruto about no se muestre el boton add task porque no tiene sentido-->
