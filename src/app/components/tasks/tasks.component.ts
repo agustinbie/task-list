@@ -29,4 +29,8 @@ export class TasksComponent implements OnInit{
     this.taskService. updateTaskReminder(task).subscribe(); //con eso actualizas la base de datos de true a false
   }
 
+  addTask(task:Task){
+    this.taskService.addTask(task).subscribe((task)=> (this.tasks.push(task)))
+  }
+
 }

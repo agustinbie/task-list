@@ -23,6 +23,12 @@
       "text": "Leer un libro de bolsa",
       "day": "Agosto 6 a las 19:00",
       "reminder": false
+    },
+    {
+      "text": "nueva tarea",
+      "day": "mañana",
+      "reminder": true,
+      "id": 5
     }
   ]
 }

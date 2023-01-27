@@ -30,6 +30,11 @@ export class TaskService {
   return this.http.put<Task>(url, task, httpOptions) //este httpOptions es para informarle al backend que lo que le estamos mandando es un json, como se importa mas arriba
  }
 
+ addTask(task:Task): Observable<Task>{
+  
+  return this.http.post<Task>(this.apiUrl, task, httpOptions)
+ }
+
 }
 
 
