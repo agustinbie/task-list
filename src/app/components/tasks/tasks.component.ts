@@ -22,4 +22,11 @@ export class TasksComponent implements OnInit{
     this.taskService.deleteTask(task).subscribe(()=>[this.tasks = this.tasks.filter((t) => t.id !== task.id)])
   }
 
+  toggleReminder(task:Task){
+    task.reminder = !task.reminder;
+    //console.log(task.reminder)  usa el console log para ir probando a ver si funciona 
+    //console.log("task!!")
+    this.taskService. updateTaskReminder(task).subscribe(); //con eso actualizas la base de datos de true a false
+  }
+
 }
